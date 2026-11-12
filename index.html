@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bakouan Assistant</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #071b16;
+  color: white;
+}
+header {
+  background: #075e45;
+  padding: 22px;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+}
+main {
+  max-width: 650px;
+  margin: auto;
+  padding: 20px;
+}
+.card {
+  background: #12352b;
+  padding: 22px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+input, button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 8px;
+}
+input {
+  background: #fff;
+  color: #111;
+}
+button {
+  background: #16a36a;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover {
+  background: #0d8052;
+}
+#reponse {
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+.status {
+  color: #55e6a5;
+  font-weight: bold;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>BAKOUAN ASSISTANT</h1>
+  <p>L'intelligence au service de tous !</p>
+</header>
+
+<main>
+
+  <div class="card">
+    <h2>Bienvenue 👋</h2>
+    <p>Votre assistant intelligent est en préparation.</p>
+    <p class="status">● Interface opérationnelle</p>
+  </div>
+
+  <div class="card">
+    <h2>Tester mon assistant</h2>
+
+    <input
+      id="message"
+      type="text"
+      placeholder="Écrivez votre message..."
+    >
+
+    <button onclick="repondre()">Envoyer</button>
+
+    <p id="reponse"></p>
+  </div>
+
+  <div class="card">
+    <h2>WhatsApp Business</h2>
+    <p>Connexion officielle Meta à configurer.</p>
+    <button onclick="alert('Connexion WhatsApp en préparation')">
+      Configurer WhatsApp
+    </button>
+  </div>
+
+  <div class="card">
+    <h2>Fonctionnalités</h2>
+    <p>✓ Interface intelligente</p>
+    <p>✓ Gestion des messages</p>
+    <p>✓ Préparation de WhatsApp Business</p>
+    <p>✓ Futur moteur IA</p>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 Bakouan Assistant
+</footer>
+
+<script>
+function repondre() {
+  const message =
+    document.getElementById("message").value.trim();
+
+  const resultat =
+    document.getElementById("reponse");
+
+  if (!message) {
+    resultat.textContent = "Écrivez un message.";
+    return;
+  }
+
+  resultat.textContent =
+    "Bonjour ! Je suis Bakouan Assistant. " +
+    "J'ai reçu votre message : " + message +
+    ". Mon intelligence artificielle sera bientôt connectée.";
+
+  document.getElementById("message").value = "";
+}
+</script>
+
+</body>
+</html>
