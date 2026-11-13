@@ -1,11 +1,8 @@
-
 exports.handler = async (event) => {
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
-      body: JSON.stringify({
-        error: "Méthode non autorisée"
-      })
+      body: JSON.stringify({ error: "Méthode non autorisée" })
     };
   }
 
@@ -16,28 +13,21 @@ exports.handler = async (event) => {
     if (!message) {
       return {
         statusCode: 400,
-        body: JSON.stringify({
-          error: "Message manquant"
-        })
+        body: JSON.stringify({ error: "Message manquant" })
       };
     }
 
     return {
       statusCode: 200,
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         reply: "Bonjour ! Je suis Bakouan Assistant. Tu m'as écrit : " + message
       })
     };
-
   } catch (error) {
     return {
       statusCode: 400,
-      body: JSON.stringify({
-        error: "Message invalide"
-      })
+      body: JSON.stringify({ error: "Message invalide" })
     };
   }
 };
